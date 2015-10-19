@@ -1,0 +1,102 @@
+<!DOCTYPE HTML><html><head><meta charset="UTF-8"/><title>
+</title>
+
+<style type="text/css">
+/*<![CDATA[*/
+
+    html * {margin:0;padding:0;}
+
+	* {outline-style: none;outline:none !important;-webkit-text-stroke:1px transparent;}
+
+
+    body {
+       font-size:16px;
+       font-family:arial,verdana,tahoma;
+       width:100%;
+    }
+
+    menu, nav, section, article, footer, header, hgroup, aside, figure { display: block; }
+
+    #page {
+        text-align:center;
+		width:960px;
+        margin:0 auto;
+        background:#fff;
+    }
+
+    a:focus, a:active, button:focus, button:active {outline:none !important;}
+    button::-moz-focus-inner {border: 0;}
+
+    .r {
+      -moz-border-radius: 1px;
+      border-radius: 1px;
+    }
+
+
+/*]]>*/
+</style>
+</head><body>
+<div id="page">
+
+
+<div class="timestamp">2012/06/12 06:06:14</div>
+<div class="timestamp">2011/07/21 02:21:49</div>
+<div class="timestamp">2011/03/28 14:00:00</div>
+<div class="timestamp">2011/04/08 14:00:00</div>
+<div class="timestamp">2010/03/28 14:02:00</div>
+<div class="timestamp">2001/03/28 14:00:00</div>
+<div class="timestamp">2011/06/24 14:00:00</div>
+<div class="timestamp">2012/07/22 04:00:00</div>
+<div class="timestamp">1979/03/22 04:00:00</div>
+<div class="timestamp">2013/07/02 04:00:00</div>
+<div class="timestamp">2011/09/22 04:00:00</div>
+<div class="timestamp">2011/07/02 04:00:00</div>
+<br/>
+<div class="timestamp" id="last">1339482941312</div>
+<!--
+-->
+
+
+<div id="4years-ago" class="timestamp">7 Feb 2011</div>
+<div id="future-date" class="timestamp">2015/5/18 01:11:00</div>
+<div id="lastweek" class="timestamp">2015/5/6 04:00:00</div>
+<div class="timestamp" id="2weeksago">2015/04/30 12:00:00</div>
+<div class="timestamp" id="4weeksago">2015/04/15 04:00:00</div>
+<div class="timestamp" id="lastmonth">2015/04/12 04:00:00</div>
+<div class="timestamp" id="7monthsago">2014/10/14 04:00:00</div>
+<div class="timestamp" id="yesterday">2015/5/13 04:00:00</div>
+<div class="timestamp" id="yesterday2">2015/5/13 03:00:00</div>
+<div class="timestamp" id="4days ago">2015/5/10 02:00:00</div>
+
+
+<div class="timestamp" id="">2013/10/18 11:00:00</div>
+
+<div class="timestamp">2013/10/18 23:32:00</div>
+<div class="timestamp">2013/10/19 02:00:00</div>
+
+<div class="timestamp">2013/10/19 03:00:00</div>
+<div class="timestamp">2013/10/19 04:00:00</div>
+
+</div>
+<script language="JavaScript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" type="text/javascript"></script>
+<script language="JavaScript" type="text/javascript">
+/*<![CDATA[*/
+
+    $(function(){
+
+		// adds recent time, using timestamp method
+        var d = new Date().getTime();
+        $("#last").html(d);
+
+
+		// turns all .timestamp classes to the friendly date
+        $(".timestamp").each(function(){
+            $(this).html(friendlyDate($(this).html()));
+        });
+    });
+
+
+/*]]>*/
+</script>
+<script language="JavaScript" src="fdates.js" type="text/javascript"></script>
+</body></html>
