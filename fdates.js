@@ -23,9 +23,10 @@
 /**
  * dateString is the time,
  * ago:boolean is the "(2 minutes ago)" part
+ * compareDate: Date object, something to anchor it to, is not defined then use Now.
  */
 
-var friendlyDate, fDate = friendlyDate = function(dateString, ago /* default true */){
+var friendlyDate, fDate = friendlyDate = function(dateString, ago /* default true */, compareDate /* Date object */){
 
 
     ago = ago || true;
@@ -48,10 +49,10 @@ var friendlyDate, fDate = friendlyDate = function(dateString, ago /* default tru
     if(fTime.toString() === "Invalid Date")
         return dateString || "Date Invalid";
 
-    var nowTime = new Date();
-    //var userZoneOff = -nowTime.getTimezoneOffset();
-    //fTime.setMinutes(fTime.getMinutes()+userZoneOff);
-    //var x = fTime.toUTCString() +"!!!!!"+userZoneOff;
+    var nowTime = compareDate || new Date();
+	
+	
+    
 
     var months = ["Jan","Feb","March","April", "May", "June", "July", "Aug", "Sept","Oct","Nov","Dec"];
     var days = ["Sunday","Monday","Tuesday", "Wednesday","Thursday","Friday","Saturday"];

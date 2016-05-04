@@ -1,4 +1,10 @@
+<<<<<<< Updated upstream
 <!DOCTYPE HTML><html><head><meta charset="UTF-8"/><title>giffo/fdates example</title>
+=======
+<!DOCTYPE HTML><html><head><meta charset="UTF-8"/><title>Simple Example of fDates aka friendly dates
+</title>
+
+>>>>>>> Stashed changes
 <style type="text/css">
 /*<![CDATA[*/
     html * {margin:0;padding:0;}
@@ -61,6 +67,7 @@
 <div class="timestamp">2013/10/19 03:00:00</div>
 <div class="timestamp">2013/10/19 04:00:00</div>
 
+    <div class="anchorDate">1922/4/4 0:00:00</div>
 </div>
 <script language="JavaScript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" type="text/javascript"></script>
 <script language="JavaScript" type="text/javascript">
@@ -76,6 +83,10 @@
 		// turns all .timestamp classes to the friendly date
         $(".timestamp").each(function(){
             $(this).html(friendlyDate($(this).html()));
+        });
+        
+        $(".anchorDate").each(function(){
+            $(this).html(friendlyDate($(this).html(), true, new Date(1940, 4, 4)));
         });
     });
 
